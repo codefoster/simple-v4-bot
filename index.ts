@@ -1,7 +1,7 @@
 import { ConsoleAdapter } from "botbuilder";
 
-new ConsoleAdapter().listen(ctx => {
+new ConsoleAdapter().listen(context => {
     
-    if (ctx.activity.text === 'message') 
-        ctx.sendActivity(ctx.activity.text);
+    if (context.activity.type === 'message') 
+        context.sendActivity(` > ${context.activity.text}`);
 })
